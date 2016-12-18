@@ -91,8 +91,6 @@ After=network.target
 
 [Service]
 Type=forking
-#Type=oneshot
-#RemainAfterExit=yes
 KillMode=none
 ExecStart=/home/username/sh/latent.sh start
 ExecStop=/home/username/sh/latent.sh stop
