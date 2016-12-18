@@ -66,9 +66,15 @@ It works with a varity of boot managers.
 #### Upstart/SysVinit
 Put the `latent.sh` in `/etc/init.d/latent.sh` and activate it.
 
-* ```# update-rc.d latent.sh defaults 99```
+Register it with rc.d:
+```bash
+# update-rc.d latent.sh defaults 99
+```
 
-* ```# chmod 755 /etc/init.d/latent.sh```
+Make it executable:
+```bash
+# chmod 755 /etc/init.d/latent.sh
+```
 
 ##### Usage:
 ```bash
