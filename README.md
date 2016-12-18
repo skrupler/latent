@@ -1,7 +1,6 @@
 # latent.sh
 `latent.sh` is a autostart script written in bash for openvpn, rtorrent and sysvinit/systemd. It ables you to with little hassle
-create a separate networked namespace (copy of the network stack) and connect it over openvpn isolating it from the rest of
-the system. It then launches rtorrent into a byobu session and binds it (-b <ipaddr>) to the ip address.
+create a separate networked namespace (logical copy of the network stack) and connect it over openvpn isolating it from the rest of the system. It then launches rtorrent into a byobu session and binds it (-b <ipaddr>) to the ip address.
 
 This is useful if you want to run certain processes like rtorrent in an isolated enviroment connected to the internet
 via a vpn connection.
