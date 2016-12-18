@@ -26,18 +26,37 @@ The script depends on these packages.
 .. and obviously a vpn provider you either run yourself or trust enough with your illicit traffic ;-)
 
 # Installation
-I didn't think this thru. Im gonna update the instructions asap, first some sleep.
+I didn't think this thru.
 
-# Boot managers
+### 1)
+Clone the repo.
+```bash
+$ git clone https://github.com/skrupler/latent.git .sh
+```
+### 2)
+Adjust the settings.
+```bash
+$ vim latent.sh
+```
+
+### 3)
+
+
+
+Copy the `latent.sh` script and put it where ever you like it. Adjust the settings to your
+liking. Also dont forget to edit add the `
+
+
+## Boot managers
 It works with a varity of boot managers. 
 
-## Upstart
+### Upstart
 todo
 
-## SysVinit
+### SysVinit
 todo
 
-## Systemd
+### Systemd
 Systemd works perfect since you can just simply create a systemd unit and call the script with the `start` and `stop` parameters.
 
 
