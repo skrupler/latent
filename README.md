@@ -34,7 +34,7 @@ $ git clone https://github.com/skrupler/latent.git .sh
 ```
 ### 2) Adjust the settings.
 ```bash
-$ vim latent.sh
+$ vim .sh/latent.sh
 ```
 
 ```bash
