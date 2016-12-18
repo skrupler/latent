@@ -64,11 +64,10 @@ Do note that if you have a vpn provider with login credentials you can specify i
 It works with a varity of boot managers. 
 
 #### Upstart/SysVinit
-Simply put the `latent.sh` in `/etc/init.d/latent.sh` and activate it.
+Put the `latent.sh` in `/etc/init.d/latent.sh` and activate it.
 
-* Put script into /etc/init.d/latent.sh
-* update-rc.d latent.sh defaults 99
-* chmod 755 /etc/init.d/latent.sh
+* ```bash update-rc.d latent.sh defaults 99```
+* ```bash chmod 755 /etc/init.d/latent.sh```
 
 ##### Usage:
 ```bash
