@@ -27,11 +27,11 @@ The script depends on these packages.
 # Installation
 I didn't think this thru.
 
-### 1) Clone the repo
+### 1. Clone the repo
 ```bash
 $ git clone https://github.com/skrupler/latent.git .sh
 ```
-### 2) Adjust the settings.
+### 2. Adjust the settings.
 ```bash
 $ vim .sh/latent.sh
 ```
@@ -58,7 +58,7 @@ SOCKET_NAME=rtmux
 #### Tip
 Do note that if you have a vpn provider with login credentials you can specify in your `.ovpn` configuration file a authentication directive `auth-user-pass /etc/openvpn/auth` which takes two lines, username and password on 2ndline.
 
-### 3) Choose what boot manager you run and continue from there.
+### 3. Choose what boot manager you run and continue from there.
 
 ### Boot managers
 It works with a varity of boot managers. 
