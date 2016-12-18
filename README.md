@@ -28,35 +28,46 @@ The script depends on these packages.
 # Installation
 I didn't think this thru.
 
-### 1)
-Clone the repo.
+### 1) Clone the repo
 ```bash
 $ git clone https://github.com/skrupler/latent.git .sh
 ```
-### 2)
-Adjust the settings.
+### 2) Adjust the settings.
 ```bash
 $ vim latent.sh
 ```
 
-### 3)
+```bash
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+USER="HACKER1"
+RTORRENT=/usr/bin/rtorrent
+BYOBU=/usr/bin/byobu
+BYOBU_NAME=secure
+BYOBU_TITLE=rtorrent
+IP=/sbin/ip
+PIDFILE=/var/run/rtorrent.pid
+SOCKET=/tmp/rpc.socket
+IFACE="eth0"
+NETNS="hidden"
+VETH0="veth0"
+VETH1="veth1"
+DNS="nameserver 91.239.100.100"
+OPVN=/etc/openvpn/openvpn.ovpn
+SOCKET_NAME=rtmux
+```
 
+### 3) Choose what boot manager you run and continue from there.
 
-
-Copy the `latent.sh` script and put it where ever you like it. Adjust the settings to your
-liking. Also dont forget to edit add the `
-
-
-## Boot managers
+### Boot managers
 It works with a varity of boot managers. 
 
-### Upstart
+#### Upstart
 todo
 
-### SysVinit
+#### SysVinit
 todo
 
-### Systemd
+#### Systemd
 Systemd works perfect since you can just simply create a systemd unit and call the script with the `start` and `stop` parameters.
 
 
