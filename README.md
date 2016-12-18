@@ -6,9 +6,9 @@ the system. It then launches rtorrent into a byobu session and binds it (-b <ipa
 # This is to be considered a hack. PR's welcomed.
 
 ```bash
-  +------+       +-------+       +-------+       +-------+      +---------+      +----------+
-  | eth0 |-------| VETH0 |-------| VETH1 |-------| netns |------| openvpn |------| rtorrent |
-  +------+       +-------+       +-------+       +-------+      +---------+      +----------+
+    +------+       +-------+       +-------+       +-------+      +---------+      +----------+
+    | eth0 |-------| veth0 |-------| veth1 |-------| netns |------| openvpn |------| rtorrent |
+    +------+       +-------+       +-------+       +-------+      +---------+      +----------+
 ```
 
 # Requirements
