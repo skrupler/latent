@@ -9,7 +9,7 @@ The gist of it is that a `netns` is created upon runtime and `iptables` are conf
 Then a `openvpn` connection is established and the `rtorrent` instance is binded to the ip address acquired by `openvpn`.
 
 # Visualization
-```bash
+```
         +------+       +-------+       +-------+       +-------+      +---------+      +----------+
         | eth0 |-------| veth0 |-------| veth1 |-------| netns |------| openvpn |------| rtorrent |
         +------+       +-------+       +-------+       +-------+      +---------+      +----------+
