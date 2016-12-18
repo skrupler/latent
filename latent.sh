@@ -114,7 +114,6 @@ case "$1" in
         echo "rtorrent started successfully."
         ;;
 
-
     # Stop rtorrent.
     stop)
         echo "Stopping rtorrent."
@@ -129,7 +128,7 @@ case "$1" in
         killall byobu
         echo "Stopping openvpn."
         killall openvpn
-		killall tmux
+	killall tmux
         remove_netns
         remove_socket
 
