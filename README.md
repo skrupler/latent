@@ -6,7 +6,7 @@ via a vpn connection.
 
 # How it works
 The gist of it is that a `netns` is created upon runtime and `iptables` are configured accordingly via virtual eth's or (veths for short) making the `netns` able to access the network.
-Then a `openvpn` connection is established and the `rtorrent` instance is binded to the ip address acquired by openvpn.
+Then a `openvpn` connection is established and the `rtorrent` instance is binded to the ip address acquired by `openvpn`.
 
 # Visualization
 ```bash
