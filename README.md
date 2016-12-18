@@ -67,10 +67,41 @@ It works with a varity of boot managers.
 #### Upstart/SysVinit
 Simply put the `latent.sh` in `/etc/init.d/latent.sh` and activate it.
 
+* Put script into /etc/init.d/latent.sh
+* update-rc.d latent.sh defaults 99
+* chmod 755 /etc/init.d/latent.sh
+
+##### Usage:
+```bash
+# service latent.sh (start|stop|restart)
+```
+
+
+
 
 #### Systemd
-Systemd works perfect since you can just simply create a systemd unit and call the script with the `start` and `stop` parameters.
+Create a unit file in `/etc/systemd/system/latent.service`.
 
+```bash
+[Unit]
+Description=rTorrent
+After=network.target
 
+[Service]
+Type=forking
+#Type=oneshot
+#RemainAfterExit=yes
+KillMode=none
+ExecStart=/home/username/sh/latent.sh start
+ExecStop=/home/username/sh/latent.sh stop
+WorkingDirectory=%h
+Restart=on-failure
 
+[Install]
+WantedBy=default.target
 
+##### Usage:
+```bash
+systemctl enable latent.service
+systemctl start|stop|restart latent.service
+```
