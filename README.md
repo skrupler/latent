@@ -84,7 +84,7 @@ Create a unit file in `/etc/systemd/system/latent.service`.
 
 ```bash
 [Unit]
-Description=rTorrent
+Description=latent.sh
 After=network.target
 
 [Service]
@@ -99,8 +99,10 @@ Restart=on-failure
 
 [Install]
 WantedBy=default.target
+```
 
 ##### Usage:
+
 ```bash
 systemctl enable latent.service
 systemctl start|stop|restart latent.service
