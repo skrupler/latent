@@ -3,8 +3,9 @@
 create a separate networked namespace (copy of the network stack) and connect it over openvpn isolating it from the rest of
 the system. It then launches rtorrent into a byobu session and binds it (-b <ipaddr>) to the ip address.
 
-# This is to be considered a hack. PR's welcomed.
+## This is to be considered a hack. PR's welcomed.
 
+# Visualization
 ```bash
     +------+       +-------+       +-------+       +-------+      +---------+      +----------+
     | eth0 |-------| veth0 |-------| veth1 |-------| netns |------| openvpn |------| rtorrent |
@@ -20,7 +21,7 @@ The script depends on these packages.
 
 # How it works
 The gist of it is that a netns is created upon runtime and iptables are configured accordingly via virtual eth's or (veths for short) making the netns able to access the network.
-Then a openvpn connection is established 
+Then a openvpn connection is established and the rtorrent instance is binded to the ipaddress acquired by openvpn.
 
 # Boot managers
 It works with a varity of boot managers. 
