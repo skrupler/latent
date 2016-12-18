@@ -1,13 +1,12 @@
 # latent.sh
-`latent.sh` is a autostart script written in bash for openvpn, rtorrent and sysvinit/systemd. It ables you to with little hassle
-create a separate networked namespace (logical copy of the network stack) and connect it over openvpn isolating it from the rest of the system. It then launches rtorrent into a byobu session and binds it (-b <ipaddr>) to the ip address.
+`latent.sh` is a autostart script written in bash for `openvpn`, `rtorrent` and `sysvinit`/`systemd`. It ables you to with little hassle create a separate networked namespace (logical copy of the network stack) and connect it over openvpn isolating it from the rest of the system. It then launches rtorrent into a byobu session and binds it (-b <ipaddr>) to the ip address.
 
 This is useful if you want to run certain processes like rtorrent in an isolated enviroment connected to the internet
 via a vpn connection.
 
 # How it works
-The gist of it is that a netns is created upon runtime and iptables are configured accordingly via virtual eth's or (veths for short) making the netns able to access the network.
-Then a openvpn connection is established and the rtorrent instance is binded to the ipaddress acquired by openvpn.
+The gist of it is that a `netns` is created upon runtime and `iptables` are configured accordingly via virtual eth's or (veths for short) making the `netns` able to access the network.
+Then a `openvpn` connection is established and the `rtorrent` instance is binded to the ip address acquired by openvpn.
 
 # Visualization
 ```bash
@@ -75,9 +74,6 @@ Simply put the `latent.sh` in `/etc/init.d/latent.sh` and activate it.
 ```bash
 # service latent.sh (start|stop|restart)
 ```
-
-
-
 
 #### Systemd
 Create a unit file in `/etc/systemd/system/latent.service`.
