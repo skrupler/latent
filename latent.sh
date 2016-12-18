@@ -48,7 +48,7 @@ create_netns() {
     ip netns exec ${NETNS} ip link set lo up
     echo "Bringing up loopback device for ${NETNS}..."
     
-    # Connect tubes from root-ns to froot-ns
+    # Connect tubes from a to b
     ip link add ${VETH0} type veth peer name ${VETH1}
     ip link set ${VETH0} up
     ip link set ${VETH1} netns ${NETNS} up
@@ -60,7 +60,7 @@ create_netns() {
     ip netns exec ${NETNS} ip route add default via 10.0.5.1 dev ${VETH1}
     echo "Configuring default ip and route..."
 
-    # Add DNS, can be changed in settings ofc
+    # Add DNS, can be changed in settings
     mkdir -p /etc/netns/${NETNS}
     touch /etc/netns/${NETNS}/resolv.conf # probably redundant 
     echo "$DNS" > /etc/netns/${NETNS}/resolv.conf
