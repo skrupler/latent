@@ -56,16 +56,17 @@ OPVN=/etc/openvpn/openvpn.ovpn
 SOCKET_NAME=rtmux
 ```
 
+#### Tip
+Do note that if you have a vpn provider with login credentials you can specify in your `.ovpn` configuration file a authentication directive `auth-user-pass /etc/openvpn/auth` which takes two lines, username and password on 2ndline.
+
 ### 3) Choose what boot manager you run and continue from there.
 
 ### Boot managers
 It works with a varity of boot managers. 
 
-#### Upstart
-todo
+#### Upstart/SysVinit
+Simply put the `latent.sh` in `/etc/init.d/latent.sh` and activate it.
 
-#### SysVinit
-todo
 
 #### Systemd
 Systemd works perfect since you can just simply create a systemd unit and call the script with the `start` and `stop` parameters.
