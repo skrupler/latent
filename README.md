@@ -3,8 +3,6 @@
 create a separate networked namespace (copy of the network stack) and connect it over openvpn isolating it from the rest of
 the system. It then launches rtorrent into a byobu session and binds it (-b <ipaddr>) to the ip address.
 
-## This is to be considered a hack. PR's welcomed.
-
 # Visualization
 ```bash
     +------+       +-------+       +-------+       +-------+      +---------+      +----------+
