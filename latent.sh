@@ -1,38 +1,4 @@
-#!/bin/bash
-#   
-#   ABOUT:  
-#   A init.d startup script for rtorrent launched in a network namespace which
-#   connects to a openvpn server - aimed to work with ubuntu 14.04. Should work on any start-stop-daemon powerered
-#   systems though.
-#
-#   DESCRIPTION:
-#   1) Creates a network namespace
-#   2) Connects to a openvpn server
-#   3) Validates IP address on tun0 device
-#   4) Launches rtorrent into the network namespace to isolate it from the rest of the system
-#   5) Binds the application to tun0's ip address preveting IP leakage
-#
-#   SYSTEMD
-#   /etc/systemd/system/rtorrent.service
-#
-#   [Unit]
-#   Description=rTorrent
-#   After=network.target
-
-#   [Service]
-#   Type=forking
-#   KillMode=none
-#   ExecStart=/path/to/rtorrent start
-#   ExecStop=/path/to/rtorrent stop
-#   WorkingDirectory=%h
-
-#   [Install]
-#   WantedBy=default.target
-
-#   Then just $~: 
-#   systemctl enable rtorrent
-#   systemctl start rtorrent
-#   systemctl stop rtorrent
+#!/bin/bash   
 
 # Settings
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
