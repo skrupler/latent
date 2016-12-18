@@ -19,7 +19,10 @@ The script depends on these packages.
 * openvpn
 * rtorrent
 
-[..] and obviously a vpn provider you either run yourself or trust enough with your illicit traffic ;-)
+.. and obviously a vpn provider you either run yourself or trust enough with your illicit traffic ;-)
+
+# Installation
+I didn't think this thru. Im gonna update the instructions asap, first some sleep.
 
 # How it works
 The gist of it is that a netns is created upon runtime and iptables are configured accordingly via virtual eth's or (veths for short) making the netns able to access the network.
