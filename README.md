@@ -23,6 +23,7 @@ The script depends on these packages.
 * byobu
 * openvpn
 * rtorrent
+* iptables
 
 .. and obviously a vpn provider you either run yourself or trust enough with your illicit traffic ;-)
 
