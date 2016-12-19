@@ -4,6 +4,8 @@
 This is useful if you want to run certain processes like rtorrent in an isolated enviroment connected to the internet
 via a vpn connection.
 
+# This project is under development still, might change/break
+
 # How it works
 The gist of it is that a `netns` is created upon runtime and `iptables` are configured accordingly via virtual eth's or (veths for short) making the `netns` able to access the network.
 Then a `openvpn` connection is established and the `rtorrent` instance is binded to the ip address acquired by `openvpn`.
