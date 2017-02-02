@@ -1,0 +1,13 @@
+[Unit]
+Description=Start aquarium server
+
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/script
+Type=forking
+ExecStart=/bin/bash server.sh start
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

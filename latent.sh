@@ -69,6 +69,7 @@ create_netns() {
     # IPTABLES
     iptables -A INPUT \! -i ${VETH0} -s 10.0.5.0/24 -j DROP
     iptables -t nat -A POSTROUTING -s 10.0.5.0/24 -o ${IFACE} -j MASQUERADE
+	# if != 1 then;
     sysctl -q net.ipv4.ip_forward=1
     echo "Configuring iptables on ${IFACE}..."
     sleep 5
@@ -90,7 +91,15 @@ remove_netns() {
 }
 
 
-connect_openvpn() {
+get_public_ip(){
+
+	extip=$(dig +short myip.opendns.com @resolver1.opendpn.com)
+	printf 'Public IP: %s' "$extip"
+
+}
+
+
+conn_openvpn() {
     
     # You have to add 'daemon' to the end of *.opvn conf file to make it fork to background. 
     ip netns exec ${NETNS} openvpn --config "$OPVN"
@@ -99,13 +108,16 @@ connect_openvpn() {
     
 }
 
-get_valid_ip() {
+get_openvpn_ip() {
     
     # takes @params tun0,eth0
     VALIDIP=$(ip netns exec ${NETNS} ip addr ls "$1" | awk '/inet / {print $2}' | cut -d "/" -f1)
     echo "Connected IP: ${VALIDIP}"
     
 }
+
+
+
 
 case "$1" in
     
@@ -138,7 +150,7 @@ case "$1" in
         killall byobu
         echo "Stopping openvpn."
         killall openvpn
-	killall tmux
+		killall tmux
         remove_netns
         remove_socket
 
