@@ -17,7 +17,7 @@ Then a `openvpn` connection is established and the `rtorrent` instance is binded
         +------+       +-------+       +-------+       +-------+      +---------+      +----------+
 ```
 
-# Requirements
+# Dependencies
 The script depends on these packages.
 
 * byobu
